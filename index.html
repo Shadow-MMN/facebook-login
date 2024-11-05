@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/CSS/bootstrap.css" />
+    <title>Facebook Login</title>
+  </head>
+  <body>
+    <section id="facebook_login">
+      <div class="container">
+        <div class="row justify-content-center align-items-center min-vh-100">
+          <div class="col-md-6 col-sm-12 text-center text-md-start">
+            <div class="text-wrap" id="left-side-text">
+              <h1 class="text-primary display-1">Facebook</h1>
+              <p>
+                Facebook helps you connect and share with the people in your
+                life
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-sm-12">
+            <div class="text-center" id="Right-side">
+              <div class="form_body">
+                <form action="">
+                  <div class="mb-3">
+                    <input
+                      type="text"
+                      class="form-control py-3 my-3"
+                      placeholder="Email address or phone number"
+                      id="emailOrPhone"
+                      oninput="validateInput()"
+                    />
+                    <input
+                      type="password"
+                      class="form-control py-3 my-3"
+                      placeholder="Password"
+                    />
+                  </div>
+                </form>
+                <div class="d-grid gap-2">
+                  <a
+                    class="py-3"
+                    href="https://web.facebook.com/login/?privacy_mutation_token=eyJ0eXBlIjowLCJjcmVhdGlvbl90aW1lIjoxNzMwNzk2NTM1LCJjYWxsc2l0ZV9pZCI6MzgxMjI5MDc5NTc1OTQ2fQ%3D%3D&next"
+                  >
+                    <button class="btn btn-primary" type="button">
+                      Log in
+                    </button>
+                  </a>
+                </div>
+                <a
+                  class="py-3"
+                  href="https://web.facebook.com/recover/initiate/?privacy_mutation_token=eyJ0eXBlIjowLCJjcmVhdGlvbl90aW1lIjoxNzMwNzk3OTQ0LCJjYWxsc2l0ZV9pZCI6MzgxMjI5MDc5NTc1OTQ2fQ%3D%3D&ars=facebook_login&next"
+                  >Forgotten Password?</a
+                >
+                <hr class="py-1 pt-1" />
+                <div class="d-grid gap-2 py-3">
+                  <a class="" href="https://web.facebook.com/r.php">
+                    <button class="btn btn-success" type="button">
+                      Create new account
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <p class="my-4 text-center">
+              <span><b>Create a Page</b></span> for a celebrity, brand, or
+              business.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script src="/JS/bootstrap.js">
+      function validateInput() {
+      const input = document.getElementById('emailOrPhone').value;
+      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      const phoneRegex = /^[+]?[0-9]{10,15}$/;
+
+      if (emailRegex.test(input)) {
+        // Email is valid
+        document.getElementById('emailOrPhone').style.borderColor = 'green';
+      } else if (phoneRegex.test(input)) {
+        // Phone number is valid
+        document.getElementById('emailOrPhone').style.borderColor = 'green';
+      } else {
+        // Invalid input
+        document.getElementById('emailOrPhone').style.borderColor = 'red';
+      }
+    }
+  </script>
+</html>
